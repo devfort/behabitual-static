@@ -1,10 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Gamgee</title>
-  </head>
-  <body>
-    {% block content %}{% endblock %}
-  </body>
-</html>
+{% extends "cape_shell.html" %}
+
+{% block head_css %}
+  <link rel='stylesheet' href='/hobbit.css' media='screen'>
+{% endblock %}
+
+{% block body_sheath %}
+  <header>
+    <div>
+      <h1>
+        <a href="/">
+          <img src="/images/logo@2x.png"
+               alt="Be Habitual"
+               height="51" width="144">
+        </a>
+      </h1>
+      {#
+      {% if user.is_authenticated %}
+      <form action="{% url 'logout' %}" method="POST" class="login-out">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+      </form>
+      {% else %}
+      <a href="{% url 'login' %}" class="login-out">Login</a>
+      {% endif %}
+      #}
+    </div>
+  </header>
+  <div id="main" class='{% block main_class %}{% endblock %}'><div id="main-inner">
+    {#
+    {% if user.is_authenticated and not view.is_dashboard %}
+      <div id='breadcrumb'>
+        <a href='{% url "homepage" %}'>Dashboard</a>
+      </div>
+    {% endif %}
+    #}
+    
+    {% block body %}{% endblock %}
+  </div></div>
+  <footer><div>
+    <p>&copy; 2013</p>
+    <p>A <a href="http://devfort.com/">/dev/fort</a> project</p>
+    <p class='contact'>
+      <b>Learn more </b>
+      <a href='/about'>about<b> Be Habitual</b></a><b>, or</b>
+      <a href='mailto:{{ CONTACT_EMAIL }}' title='Email {{ CONTACT_EMAIL }}'>contact us</a>
+    </p>
+  </div></footer>
+{% endblock %}
+
+{% block javascript_libraries %}
+  <script src='/js/jquery-1.9.1.min.js'></script>
+  <script>
+    window_height = $(window).height();
+    header_height = $('header').height();
+    $('#main').css('min-height', window_height - (header_height*5));
+
+    window.BeHabitual = {
+      URLs: {
+        repeatIcon: 'images/repeat-icon.svg'
+      }
+    };
+  </script>
+{% endblock %}
+
+{% block javascript_asynchronous %}
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '{{ GOOGLE_ANALYTICS_ID }}']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+{% endblock %}

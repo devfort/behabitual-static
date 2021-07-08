@@ -1,5 +1,49 @@
 {% extends "base.html" %}
 
-{% block content %}
-  <p>Hello, {{name}}.</p>
+{% block title %}Forget goals. Form habits.{% endblock %}
+{% block body_class %}home{% endblock %}
+
+{% block body %}
+  
+  <div class="welcome">
+    <img src="/images/welcome_logo@2x.png" height="210" width="210">
+    <h1 class="">Forget goals. <em>Form habits.</em></h1>
+    <p>Visualize your progress and create smart reminders.</p> 
+  </div>
+  
+ <section class="quickstart">
+    <h2 class="minor-heading">What habit are you trying to form?</h2>
+    <form action="/add_habit" method="POST">
+      <input type="hidden" name="onboarding_wizard-current_step" value="habit">
+      <p>
+        <label for="id_habit-description">I want to <input disabled></label>,
+        <span><label for="id_habit-target_value"><input disabled> times</label>
+        <label for="id_habit-resolution">per <input disabled></label></span>
+      </p>
+      <button type="submit" class="progress" disabled>Get started!</button>
+    </form>
+  </section>
+
+  <section class="examples">
+    <h2 class="minor-heading">Example Stories</h2>
+    <div class="example">
+        <img src="/images/home-teeth@2x.png" height="150" width="222">
+        <p>Stephanie uses Be Habitual to <strong>brush her teeth</strong> right after she <strong>eats breakfast</strong>.</p>
+    </div>
+    <div class="example">
+        <img src="/images/home-cycle@2x.png" height="150" width="222">
+        <p>George <strong>cycles to work daily</strong> thanks to reminders from Be Habitual. Neat.</p>
+    </div>
+    <div class="example">
+        <img src="/images/home-you@2x.png" height="150" width="222">
+        <p>You <strong>change your routine</strong> slightly and <strong>form new habits</strong>. Because awesome.</p>
+    </div>
+  </section>
+  
+  <h2 class="minor-heading">
+    That&rsquo;s really all there is! <span class='gap'>&nbsp;</span>
+    <a href="/add_habit" class="progress">Get Started!</a>
+  </div>
+
+<a href="/hobbit" id="hobbit"><img src="/images/ring@2x.png" alt="" height="25" width="25"></a>
 {% endblock %}

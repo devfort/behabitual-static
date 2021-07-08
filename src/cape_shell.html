@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='en-gb'>
+  <head>
+    <meta charset='UTF-8'>
+    <title>Be Habitual: {% block title %}SET A TITLE{% endblock %}</title>
+    <!--[if lt IE 9]>
+    <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src='/js/html5shiv.js'></script>
+    
+    {% block head_icons %}{% endblock %}
+    {% block head_links %}{% endblock %}
+    {% block head_alternate %}{% endblock %}
+    {% block head_css %}{% endblock %}
+    {% block head_meta %}{% endblock %}
+    
+    <script>
+      window.CAPE = {};
+      window.CAPE.stage = function(stage) {
+        document.documentElement.className = 'js-' + stage;
+      }
+      CAPE.timeout = setTimeout( CAPE.stage('timeout'), 5000 );
+      CAPE.stage('capable');
+    </script>
+  </head>
+  <body {% block body_attributes %}{% endblock %} class='{% block body_class %}{% endblock %}'>
+    
+    {% block body_sheath %}{% endblock %}
+    
+    <script>
+      {% block javascript_variables %}{% endblock %}
+    </script>
+    {% block javascript_libraries %}{% endblock %}
+    <script>
+      {% block javascript_enhance %}{% endblock %}
+      clearTimeout(CAPE.timeout);
+      CAPE.stage('ready');
+    </script>
+    {% block javascript_asynchronous %}{% endblock %}
+  </body>
+</html>

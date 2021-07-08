@@ -15,7 +15,10 @@ env = Environment(
     autoescape=select_autoescape(),
 )
 
-context = {"name": "world"}
+context = {
+    "CONTACT_EMAIL": "...",
+    "GOOGLE_ANALYTICS_ID": "...",
+}
 
 for path in PAGES_PATH.glob("**/*.html"):
     template_path = path.relative_to(SRC_PATH)
