@@ -1,0 +1,97 @@
+/* -*- Mode: CSS; tab-width: 4; indent-tabs-mode: nil; -*- */
+
+.add-trigger .highlight strong {
+    padding:                3px;
+    border-radius:          3px;
+}
+
+.add-trigger .highlight span.term-explanation {
+    position:               relative;
+    padding-left:           50px;
+}
+
+.add-trigger .highlight .trigger {
+    display:                block;
+}
+.add-trigger .highlight .trigger strong {
+    background:             $highlight_colour_b;
+}
+.add-trigger .highlight .trigger span.term-explanation {
+    color:                  $highlight_colour_b;
+}
+.add-trigger .highlight .habit strong {
+    background:             $positive_colour;
+}
+.add-trigger .highlight .habit span.term-explanation {
+    color:                  $positive_colour;
+}
+.add-trigger .highlight span.term-explanation:before {
+    content:                '';
+    display:                block;
+    position:               absolute;
+    left:                   5px;
+    top:                    48%;
+    background:             $highlight_colour_b;
+    height:                 2px;
+    width:                  40px;
+}
+.add-trigger .highlight .habit span.term-explanation:before {
+    background:             $positive_colour;
+}
+
+.add-trigger #main .reminder {
+    background:             #97c1dc;
+    border-radius:          5px;
+    padding:                30px 40px 20px;
+}
+.add-trigger #main .reminder .trigger-text p {
+    background:             #bcd7e9;
+    border-radius:          5px;
+    padding:                15px 40px;
+    line-height:            2;
+}
+.add-trigger .reminder .columnar {
+    @extend .contain;
+}
+.add-trigger .reminder .columnar span {
+    float:                  left;
+    width:                  100px;
+}
+.add-trigger .reminder .columnar ul {
+    float:                  left;
+    width:                  200px;
+}
+.add-trigger .trigger-time {
+    border:                 solid white;
+    border-width:           1px 0;
+    padding:                20px 0;
+}
+.add-trigger .trigger-time legend {
+    @extend .offleft;
+}
+.add-trigger .reminder h2 {
+    font-size:              24px;
+    font-size:              2.4rem;
+    line-height:            1.5;
+    color:                  #333;
+    margin:                 0 0 24px;
+}
+.add-trigger #main button.submit {
+    margin-left:            200px;
+}
+.add-trigger .form-continue {
+    margin-top:             24px;
+    text-align:             center;
+}
+#skip-reminder-form button {
+    background:             none;
+    border:                 none;
+    color:                  $links_colour;
+    cursor:                 pointer;
+    font:                   inherit;
+}
+#skip-reminder-form button:focus,
+#skip-reminder-form button:hover {
+    color:                  $links_active_colour;
+    text-decoration:        underline;
+}

@@ -1,0 +1,54 @@
+/* -*- Mode: CSS; tab-width: 4; indent-tabs-mode: nil; -*- */
+
+header {
+    background:             $darkest_body_colour;
+    font-size:              16px;
+    font-size:              1.6rem;
+    padding:                7px 0;
+    position:               relative;
+    z-index:                2;
+}
+header div {
+    @extend                 .contain;
+    position:               relative;
+}
+header h1 {
+    float:                  left;
+    margin-bottom:          -22px;
+}
+header .login-out {
+    color:                  $links_active_colour;
+    float:                  right;
+    position:               absolute;
+    right:                  0;
+    top:                    16px;
+}
+header button {
+    background:             none;
+    border:                 none;
+    color:                  $links_colour;
+    font-size:              100%;
+    padding:                0;
+}
+header button:hover,
+header button:focus {
+    cursor:                 pointer;
+    text-decoration:        underline;
+}
+
+#breadcrumb {
+    @extend                 .contain;
+    margin-bottom:          36px;
+    padding-left:           30px;
+    background:             url(../images/back.png)
+                            center left no-repeat;
+}
+#breadcrumb a {
+    background:             $darker_body_colour;
+    color:                  $links_colour;
+    display:                block;
+    float:                  left;
+    padding:                12px 24px 12px 5px;
+    border-top-right-radius:    3px;
+    border-bottom-right-radius: 3px;
+}

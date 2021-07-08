@@ -1,0 +1,22 @@
+/* -*- Mode: CSS; tab-width: 4; indent-tabs-mode: nil; -*- */
+
+form.login {
+    background:             $darkest_body_colour;
+    padding:                10px 30px 30px;
+    margin-bottom:          20px;
+}
+form.login label {
+    display:                block;
+    margin:                 20px 0 10px;
+}
+form.login input {
+    padding:                20px;
+    width:                  90%;
+    color:                  #666;
+    margin-bottom:          20px;
+}
+form.login .errorlist {
+    font-size:              18px;
+    font-size:              1.8rem;
+    margin-bottom:          20px;
+}

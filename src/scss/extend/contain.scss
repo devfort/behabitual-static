@@ -1,0 +1,11 @@
+/* -*- Mode: CSS; tab-width: 4; indent-tabs-mode: nil; -*- */
+
+.contain {
+    &:after {
+        content:            '';
+        clear:              both;
+        display:            block;
+    }
+    
+    _zoom:                  1;
+}

@@ -17,6 +17,7 @@ You need a few things installed in order to work on this site:
 
 - Python 3
 - Jinja2, e.g. via `pip install jinja2`
+- libsass, e.g. via `pip install libsass`
 - entr(1), if you want to quickly see your changes
 
 To make changes to the static site:

@@ -1,0 +1,19 @@
+/* -*- Mode: CSS; tab-width: 4; indent-tabs-mode: nil; -*- */
+
+html {
+    background:             $header_colour;
+}
+#main {
+    background:             $body_colour;
+    position:               relative;
+}
+.hobbit #main {
+    background:             #000;
+    color:                  #fff;
+}
+/*  There should be an element for marking up assistive text.
+ *  Until there is, we use <b> because it is NOT EXACTLY USEFUL.
+ */
+b {
+    @extend .offleft;
+}
