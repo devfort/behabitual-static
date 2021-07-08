@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+import shutil
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 import sass
@@ -65,6 +66,21 @@ def generate_css():
         dest_file.write(css)
 
 
+def copy_static():
+    """
+    Copies static files from `{SRC_PATH}/static` to DEST_PATH.
+    """
+
+    static_src_path = SRC_PATH / "static"
+
+    shutil.copytree(
+        src=static_src_path,
+        dst=DEST_PATH,
+        dirs_exist_ok=True,
+    )
+
+
 if __name__ == "__main__":
     generate_html()
     generate_css()
+    copy_static()

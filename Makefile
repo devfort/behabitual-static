@@ -4,7 +4,7 @@ all:
 	python gamgee/generate.py
 
 clean:
-	find dest -name '*.html' -or -name '*.css' | xargs rm
+	find dest -type f -not -name '.gitignore' | xargs rm
 
 server:
 	python -m http.server --directory ./dest
