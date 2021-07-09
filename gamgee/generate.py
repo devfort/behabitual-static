@@ -1,3 +1,4 @@
+import json
 import os
 from pathlib import Path
 import shutil
@@ -28,10 +29,8 @@ def generate_html():
         autoescape=select_autoescape(),
     )
 
-    context = {
-        "CONTACT_EMAIL": "...",
-        "GOOGLE_ANALYTICS_ID": "...",
-    }
+    with (SRC_PATH / "context.json").open() as context_file:
+        context = json.load(context_file)
 
     for path in pages_path.glob("**/*.html"):
         template_path = path.relative_to(html_src_path)
