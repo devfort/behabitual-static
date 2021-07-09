@@ -54,6 +54,18 @@
     text-align:             center;
 }
 
+.tombstone {
+    background:             $darkest_body_colour;
+    border-radius:          $border_radius;
+    margin:                 0 auto 20px;
+    padding:                20px 15px 25px;
+}
+
+.tombstone strong {
+    color:                  $button_colour;
+    font-weight:            bold;
+}
+
 .quickstart {
     border:                 2px solid $darker_body_colour;
     border-width:           2px 0;
