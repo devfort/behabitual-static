@@ -118,6 +118,10 @@ button {
     background:             $button_active_colour;
     text-decoration:        none;
 }
+.progress:disabled {
+    background:             $meh_button_colour;
+    cursor:                 inherit;
+}
 button.jeffd {
     background:             $links_active_colour;
     text-decoration:        underline;

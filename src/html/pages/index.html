@@ -28,9 +28,14 @@
     <form action="/add_habit" method="POST">
       <input type="hidden" name="onboarding_wizard-current_step" value="habit">
       <p>
-        <label for="id_habit-description">I want to <input disabled></label>,
-        <span><label for="id_habit-target_value"><input disabled> times</label>
-        <label for="id_habit-resolution">per <input disabled></label></span>
+        <label for="id_habit-description">I want to <input disabled id="id_habit-description" maxlength="100" name="habit-description" placeholder=" brush my teeth" type="text" /></label>,
+        <span><label for="id_habit-target_value"><input disabled id="id_habit-target_value" name="habit-target_value" placeholder="2" type="text" /> times</label>
+        <label for="id_habit-resolution">per <select disabled id="id_habit-resolution" name="habit-resolution">
+          <option value="day">day</option>
+          <option value="weekday">day on weekdays</option>
+          <option value="weekendday">day on weekends</option>
+          <option value="week">week</option>
+        </select></label></span>
       </p>
       <button type="submit" class="progress" disabled>Get started!</button>
     </form>
